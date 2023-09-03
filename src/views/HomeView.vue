@@ -1,7 +1,7 @@
 <template>
 	<div class="home">
-		<task-add></task-add>
-		<task-list></task-list>
+		<task-add v-bind:list="listTask"></task-add>
+		<task-list v-bind:list="listTask"></task-list>
 	</div>
 </template>
 
@@ -14,6 +14,13 @@ export default {
 	components: {
 		TaskList,
 		TaskAdd,
+	},
+	data(){
+		return{
+			listTask: [
+				{id:1, name: 'Название'}
+			]
+		}
 	}
 }
 </script>
